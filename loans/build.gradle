@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'application'
     id 'org.springframework.boot' version '3.4.4'
     id 'io.spring.dependency-management' version '1.1.7'
 }
@@ -41,4 +42,14 @@ dependencies {
 
 tasks.named('test') {
     useJUnitPlatform()
+}
+
+//tasks.named('bootBuildImage') {
+    //builder = 'paketobuildpacks/builder:tiny' // Optional: Specify builder image
+    //environment = [ 'BP_NATIVE_IMAGE': 'true' ] // Optional: Enable native image build
+  //  imageName = 'gurpreet619/loans:s4' // Optional: Customize image name
+    //buildpacks = ['pagketo-buildpacks/java'] // Optional: Specify buildpacks
+//}
+application{
+    mainClass = 'com.gurpreet.loans.LoansApplication'
 }
